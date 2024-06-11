@@ -35,12 +35,12 @@ export default function TodoForm() {
   }
   const onNewQuote = evt => {
     evt.preventDefault()
-    // ✨ dispatch creation of a new quote here, using the values from the form
     const newQuote = {
       ...state,
       apocryphal: false,
       id: getNextId()
     }
+ 
     dispatchRedux(createQuote(newQuote))
     resetForm()
   }

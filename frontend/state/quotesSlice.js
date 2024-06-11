@@ -36,7 +36,7 @@ export const quotesSlice = createSlice({
       state.displayAllQuotes = !state.displayAllQuotes
     },
     deleteQuote(state, action){
-      state.quotes = state.quotes.filter(qt => qt !== action.payload)
+      state.quotes = state.quotes.filter(qt => qt.id !== action.payload)
     },
     editQuoteAuthenticity(state, action){
       const quoteToEdit = state.quotes.find(qt => qt.id === action.payload)
@@ -59,7 +59,7 @@ export const {
   createQuote,
   deleteQuote,
   editQuoteAuthenticity,
-  highlightedQuote,
+  setHighlightedQuote,
   toggleVisibility,
 } = quotesSlice.actions
 
